@@ -1,0 +1,12 @@
+commit-message-incrementing: Enabled
+commit-message-strategy: Patch
+
+commit-message-incrementing-strategies:
+  Patch:
+    - ".*"
+  Minor:
+    - '^feat\\:'
+    - '^feat\\:\\?'
+  Major:
+    - '^feat\\!'
+    - "^BREAKING CHANGE"
