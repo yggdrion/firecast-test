@@ -37,6 +37,13 @@ jobs:
         id: gitversion
         uses: gittools/actions/gitversion/execute@v3.2.1
 
+      - name: Echo GitVersion results
+        run: |
+          echo "SemVer: ${{ steps.gitversion.outputs.semver }}"
+          echo "Major:  ${{ steps.gitversion.outputs.major }}"
+          echo "Minor:  ${{ steps.gitversion.outputs.minor }}"
+          echo "Patch:  ${{ steps.gitversion.outputs.patch }}"
+
       - name: Log in to GHCR 🔑
         uses: docker/login-action@v3
         with:
@@ -44,7 +51,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-         # docker buildx build --platform linux/amd64,linux/arm64 \
+          # docker buildx build --platform linux/amd64,linux/arm64 \
       - name: Build and push Docker image 🐳
         run: |
           docker buildx build --platform linux/amd64 \
