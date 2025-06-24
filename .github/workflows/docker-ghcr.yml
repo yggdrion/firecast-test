@@ -2,7 +2,7 @@ name: Build and Push Docker Image to GHCR
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch all history for GitVersion
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -22,7 +24,7 @@ jobs:
       - name: Install GitVersion
         uses: gittools/actions/gitversion/setup@v0.11.0
         with:
-          versionSpec: '5.x'
+          versionSpec: "5.x"
 
       - name: Run GitVersion
         id: gitversion
