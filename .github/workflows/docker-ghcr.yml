@@ -44,9 +44,10 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+         # docker buildx build --platform linux/amd64,linux/arm64 \
       - name: Build and push Docker image 🐳
         run: |
-          docker buildx build --platform linux/amd64,linux/arm64 \
+          docker buildx build --platform linux/amd64 \
             -t ghcr.io/${{ github.repository }}:${{ steps.gitversion.outputs.semver }} \
             -t ghcr.io/${{ github.repository }}:latest \
             --push \
