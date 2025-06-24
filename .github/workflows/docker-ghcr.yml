@@ -18,6 +18,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Set up QEMU ⚡
+        uses: docker/setup-qemu-action@v3
+
       - name: Set up Docker Buildx 🛠️
         uses: docker/setup-buildx-action@v3
 
@@ -37,17 +40,12 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build Docker image 🐳
+      - name: Build and push Docker image (multi-arch) 🐳
         run: |
-          docker build -t ghcr.io/${{ github.repository }}:${{ steps.gitversion.outputs.semver }} -t ghcr.io/${{ github.repository }}:latest .
-
-      - name: Push Docker image (version tag) 🚀
-        run: |
-          docker push ghcr.io/${{ github.repository }}:${{ steps.gitversion.outputs.semver }}
-
-      - name: Push Docker image (latest tag) 🚀
-        run: |
-          docker push ghcr.io/${{ github.repository }}:latest
+          docker buildx build --platform linux/amd64,linux/arm64 \
+            -t ghcr.io/${{ github.repository }}:${{ steps.gitversion.outputs.semver }} \
+            -t ghcr.io/${{ github.repository }}:latest \
+            --push .
 
       - name: Create and push git tag 🏷️
         env:
