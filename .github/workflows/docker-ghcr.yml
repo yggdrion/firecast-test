@@ -34,7 +34,7 @@ jobs:
           versionSpec: "6.x"
 
       - name: Run GitVersion (debug)
-        id: gitversion
+        id: gitversiondebug
         run: |
           dotnet-gitversion /output json /verbosity diagnostic || true
 
