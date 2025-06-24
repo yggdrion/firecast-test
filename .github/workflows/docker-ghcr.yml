@@ -16,7 +16,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Fetch all history for GitVersion
+          fetch-depth: 0
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -39,8 +39,22 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t ghcr.io/${{ github.repository }}:${{ steps.gitversion.outputs.semver }} .
+          docker build -t ghcr.io/${{ github.repository }}:${{ steps.gitversion.outputs.semver }} -t ghcr.io/${{ github.repository }}:latest .
 
-      - name: Push Docker image
+      - name: Push Docker image (version tag)
         run: |
           docker push ghcr.io/${{ github.repository }}:${{ steps.gitversion.outputs.semver }}
+
+      - name: Push Docker image (latest tag)
+        run: |
+          docker push ghcr.io/${{ github.repository }}:latest
+
+      - name: Create and push git tag
+        env:
+          GIT_TAG: ${{ steps.gitversion.outputs.semver }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag $GIT_TAG
+          git push origin $GIT_TAG
