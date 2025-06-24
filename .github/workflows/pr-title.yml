@@ -1,4 +1,4 @@
-name: 🚨 Check PR Title for GitVersion Conventions
+name: 🔍 Checking PR Title
 
 on:
   pull_request:
@@ -6,7 +6,6 @@ on:
 
 jobs:
   check-pr-title:
-    name: 🔍 Validate PR title
     runs-on: ubuntu-latest
     steps:
       - name: ✅ Validate PR title format
