@@ -29,13 +29,13 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Install GitVersion 📦
-        uses: gittools/actions/gitversion/setup@v0.11.0
+        uses: gittools/actions/gitversion/setup@v3.2.1
         with:
           versionSpec: "5.x"
 
       - name: Run GitVersion 🏷️
         id: gitversion
-        uses: gittools/actions/gitversion/execute@v0.11.0
+        uses: gittools/actions/gitversion/execute@v3.2.1
 
       - name: Log in to GHCR 🔑
         uses: docker/login-action@v3
