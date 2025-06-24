@@ -28,6 +28,11 @@ jobs:
       - name: Set up Docker Buildx 🛠️
         uses: docker/setup-buildx-action@v3
 
+      - name: Run GitVersion (debug)
+        id: gitversion
+        run: |
+          dotnet-gitversion /output json /verbosity diagnostic || true
+
       - name: Install GitVersion 📦
         uses: gittools/actions/gitversion/setup@v3.2.1
         with:
