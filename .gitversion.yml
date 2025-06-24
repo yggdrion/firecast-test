@@ -3,13 +3,13 @@ commit-message-incrementing: Enabled
 commit-message-strategy: Patch
 commit-message-incrementing-strategies:
   Patch:
-    - '^fix\\:'
-    - '^chore\\:'
-    - '^docs\\:'
+    - '^fix\:'
+    - '^chore\:'
+    - '^docs\:'
     - "^added"
-    - ".*"
+    - '^(?!(feat\:|feat\!|BREAKING CHANGE)).*'
   Minor:
-    - '^feat\\:'
+    - '^feat\:'
   Major:
-    - '^feat\\!'
+    - '^feat\!'
     - "^BREAKING CHANGE"
