@@ -5,6 +5,10 @@ on:
     branches: [main]
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -40,7 +44,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push Docker image (multi-arch) 🐳
+      - name: Build and push Docker image 🐳
         run: |
           docker buildx build --platform linux/amd64,linux/arm64 \
             -t ghcr.io/${{ github.repository }}:${{ steps.gitversion.outputs.semver }} \
