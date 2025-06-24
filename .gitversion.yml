@@ -2,14 +2,14 @@ mode: Mainline
 commit-message-incrementing: Enabled
 commit-message-strategy: Patch
 commit-message-incrementing-strategies:
+  Minor:
+    - '^feat\:'
+  Major:
+    - '^feat\!'
+    - "^BREAKING CHANGE"
   Patch:
     - '^fix\:'
     - '^chore\:'
     - '^docs\:'
     - "^added"
     - '^(?!(feat\:|feat\!|BREAKING CHANGE)).*'
-  Minor:
-    - '^feat\:'
-  Major:
-    - '^feat\!'
-    - "^BREAKING CHANGE"
