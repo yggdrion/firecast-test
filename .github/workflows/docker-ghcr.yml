@@ -49,7 +49,9 @@ jobs:
           docker buildx build --platform linux/amd64,linux/arm64 \
             -t ghcr.io/${{ github.repository }}:${{ steps.gitversion.outputs.semver }} \
             -t ghcr.io/${{ github.repository }}:latest \
-            --push .
+            --push \
+            --cache-from=type=gha \
+            --cache-to=type=gha,mode=max .
 
       - name: Create and push git tag 🏷️
         env:
