@@ -1,0 +1,23 @@
+name: 🚨 Check PR Title for GitVersion Conventions
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  check-pr-title:
+    name: 🔍 Validate PR title
+    runs-on: ubuntu-latest
+    steps:
+      - name: ✅ Validate PR title format
+        run: |
+          title="${{ github.event.pull_request.title }}"
+          echo "Checking PR title: $title"
+
+          if [[ ! "$title" =~ ^(feat|fix|chore|docs|refactor|test|perf|build|ci):\  ]]; then
+            echo "❌ PR title must start with a GitVersion prefix (e.g. 'feat: ', 'fix: ')"
+            echo "Your PR title was: \"$title\""
+            exit 1
+          fi
+
+          echo "✅ PR title follows GitVersion naming conventions"
