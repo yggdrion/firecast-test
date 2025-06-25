@@ -1,7 +1,0 @@
-mode: Mainline
-commit-message-incrementing: Enabled
-
-branches:
-  main:
-    regex: ^main$
-    increment: Inherit
