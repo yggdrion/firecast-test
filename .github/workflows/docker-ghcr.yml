@@ -38,7 +38,7 @@ jobs:
 
       - name: Install semantic-release and plugins 📦
         run: |
-          npm install -g semantic-release @semantic-release/changelog @semantic-release/git @semantic-release/github conventional-changelog-conventionalcommits semantic-release-export-data
+          npm install -g semantic-release @semantic-release/changelog @semantic-release/git @semantic-release/github conventional-changelog-conventionalcommits
 
       - name: Get next version from semantic-release 🏷️
         id: get_version
@@ -47,7 +47,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npx semantic-release --dry-run || true
-          VERSION=$(cat .version 2>/dev/null || echo "")
+          VERSION=$(npx semantic-release --dry-run 2>&1 | grep -oP 'Skip v\K[0-9]+\.[0-9]+\.[0-9]+')
           echo "Detected version: $VERSION"
           if [ -z "$VERSION" ]; then
             exit 1
