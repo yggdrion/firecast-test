@@ -1,4 +1,5 @@
 mode: Mainline
+tag-prefix: "[vV]?"
 branches:
   main:
     regex: ^main$
