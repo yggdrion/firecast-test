@@ -1,0 +1,10 @@
+mode: Mainline
+branches:
+  main:
+    regex: ^main$
+    increment: Inherit
+    prevent-increment-of-merged-branch-version: true
+    track-merge-target: false
+    is-release-branch: true
+    source-branches: ["feature", "hotfix", "release", "support"]
+merge-message-formats: {}
