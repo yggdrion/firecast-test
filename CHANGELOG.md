@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/yggdrion/firecast-test/compare/v1.1.0...v1.1.1) (2025-06-25)
+
+
+### Bug Fixes
+
+* docker tag ([fca15ff](https://github.com/yggdrion/firecast-test/commit/fca15ff939ee0671cc0ea23cd1ac2293f454edd0))
+* wip ([6cee5f3](https://github.com/yggdrion/firecast-test/commit/6cee5f350734ea3e568c64da338d1fc9919f8b50))
+
 # [1.1.0](https://github.com/yggdrion/firecast-test/compare/v1.0.0...v1.1.0) (2025-06-25)
 
 
