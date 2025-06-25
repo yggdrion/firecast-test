@@ -12,7 +12,6 @@ updates:
       python:
         patterns:
           - "*"
-    requirements-file: "requirements.txt"
 
   - package-ecosystem: "github-actions"
     directory: "/"
