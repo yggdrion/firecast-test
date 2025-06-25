@@ -33,14 +33,12 @@ jobs:
         with:
           versionSpec: "5.x"
 
-      - name: Run GitVersion (debug)
-        id: gitversiondebug
-        run: |
-          dotnet-gitversion /output json /verbosity diagnostic || true
-
       - name: Run GitVersion 🏷️
         id: gitversion
         uses: gittools/actions/gitversion/execute@v3.2.1
+        with:
+          useConfigFile: true
+          configFilePath: GitVersion.yml
 
       - name: Echo GitVersion results
         run: |
