@@ -1,3 +1,18 @@
+# [1.2.0](https://github.com/yggdrion/firecast-test/compare/v1.1.1...v1.2.0) (2025-06-25)
+
+
+### Bug Fixes
+
+* wip ([b75e45e](https://github.com/yggdrion/firecast-test/commit/b75e45e5443540e5213cb366c13858553518c175))
+* wip ([30a8471](https://github.com/yggdrion/firecast-test/commit/30a8471084ff4645b34d7a49d001193068cc1075))
+* wip ([fc3f923](https://github.com/yggdrion/firecast-test/commit/fc3f9239f52eb2885fda56d62f2773c645bdbc74))
+* wip ([889da5c](https://github.com/yggdrion/firecast-test/commit/889da5ccb3dc2c41112abe714cfcf2d8c044b251))
+
+
+### Features
+
+* only do manual ([f56a5ad](https://github.com/yggdrion/firecast-test/commit/f56a5ada2c37a5be54a9f057ebff822c83477787))
+
 ## [1.1.1](https://github.com/yggdrion/firecast-test/compare/v1.1.0...v1.1.1) (2025-06-25)
 
 
