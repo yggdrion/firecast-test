@@ -1,3 +1,9 @@
+## [1.2.4](https://github.com/yggdrion/firecast-test/compare/v1.2.3...v1.2.4) (2025-06-25)
+
+### Bug Fixes
+
+* arm64 ([ac6fad7](https://github.com/yggdrion/firecast-test/commit/ac6fad7201051c7941bf3c8f35b4ffc930f2903a))
+
 ## [1.2.3](https://github.com/yggdrion/firecast-test/compare/v1.2.2...v1.2.3) (2025-06-25)
 
 ### Bug Fixes
