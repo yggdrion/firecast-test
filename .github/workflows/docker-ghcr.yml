@@ -22,12 +22,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Ensure full git history
-        run: |
-          if git rev-parse --is-shallow-repository | grep true; then
-            git fetch --prune --unshallow
-          fi
-
       - name: Set up QEMU ⚡
         uses: docker/setup-qemu-action@v3
 
@@ -39,8 +33,15 @@ jobs:
         with:
           node-version: 20
 
+      - name: Install semantic-release and plugins
+        run: |
+          npm install -g semantic-release @semantic-release/changelog @semantic-release/git @semantic-release/github
+
       - name: Get next version from semantic-release
         id: get_version
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           VERSION=$(npx semantic-release --dry-run | grep -oP 'The next release version is \K[0-9]+\.[0-9]+\.[0-9]+')
           echo "VERSION=$VERSION" >> $GITHUB_ENV
@@ -60,10 +61,6 @@ jobs:
             --push \
             --cache-from=type=gha \
             --cache-to=type=gha,mode=max .
-
-      - name: Install semantic-release and plugins
-        run: |
-          npm install -g semantic-release @semantic-release/changelog @semantic-release/git @semantic-release/github
 
       - name: Run semantic-release
         env:
