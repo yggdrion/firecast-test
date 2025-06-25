@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/yggdrion/firecast-test/compare/v1.2.0...v1.2.1) (2025-06-25)
+
+
+### Bug Fixes
+
+* wip ([cd45e86](https://github.com/yggdrion/firecast-test/commit/cd45e8670f4c0fa60964b19dcb90399b49cfcc6b))
+
 # [1.2.0](https://github.com/yggdrion/firecast-test/compare/v1.1.1...v1.2.0) (2025-06-25)
 
 
