@@ -20,6 +20,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Fetch latest remote changes 🔄
+        run: |
+          git fetch --prune --unshallow || true
+          git pull origin main || true
+
       - name: Set up QEMU ⚡
         uses: docker/setup-qemu-action@v3
 
