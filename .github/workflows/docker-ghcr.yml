@@ -1,4 +1,4 @@
-name: 🐳 Build and Push
+name: 🐳 Build, Push and Release
 
 on:
   workflow_dispatch:
