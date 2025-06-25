@@ -75,15 +75,3 @@ docstring-code-format = false
 # This only has an effect when the `docstring-code-format` setting is
 # enabled.
 docstring-code-line-length = "dynamic"
-
-[project]
-name = "firecast-test"
-version = "0.1.0"
-description = "Firecast test project"
-dependencies = [
-    "pydantic-settings==2.10.1",
-    "uvicorn==0.34.3",
-    "yt-dlp==2025.6.9",
-    "paramiko==3.5.1",
-    "fastapi==0.115.13",
-]

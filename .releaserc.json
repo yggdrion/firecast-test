@@ -11,7 +11,7 @@
             {
                 "preset": "conventionalcommits",
                 "writerOpts": {
-                    "header": "# 🚀 Release <%= version %> (<%= date %>)\n",
+                    "header": "# 🚀 Release <%= version %>\n",
                     "commitGroupsSort": "title",
                     "groupBy": "type",
                     "commitGroups": [
@@ -50,17 +50,13 @@
             "@semantic-release/git",
             {
                 "assets": [
-                    "CHANGELOG.md",
-                    "pyproject.toml"
+                    "CHANGELOG.md"
                 ],
                 "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
             }
         ],
         [
             "semantic-release-export-data"
-        ],
-        [
-            "semantic-release-pyproject"
         ]
     ]
 }
