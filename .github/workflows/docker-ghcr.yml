@@ -25,6 +25,11 @@ jobs:
           git fetch --prune --unshallow || true
           git pull origin main || true
 
+      - name: Ensure branch is up to date with remote main 🆕
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+
       - name: Set up QEMU ⚡
         uses: docker/setup-qemu-action@29109295f81e9208d7d86ff1c6c12d2833863392
 
@@ -54,6 +59,25 @@ jobs:
           fi
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
+      - name: Build Docker image 🐳
+        run: |
+          docker buildx build --platform linux/amd64,linux/arm64 \
+            -t ghcr.io/${{ github.repository }}:$VERSION \
+            -t ghcr.io/${{ github.repository }}:latest \
+            --load \
+            --cache-from=type=gha \
+            --cache-to=type=gha,mode=max .
+
+      - name: Abort if not latest commit on main ❌
+        run: |
+          REMOTE_SHA=$(git ls-remote origin refs/heads/main | cut -f1)
+          echo "Current SHA: $GITHUB_SHA"
+          echo "Remote SHA:  $REMOTE_SHA"
+          if [ "$GITHUB_SHA" != "$REMOTE_SHA" ]; then
+            echo "This workflow is not running on the latest commit of main. Exiting early."
+            exit 0
+          fi
+
       - name: Log in to GHCR 🔑
         uses: docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772
         with:
@@ -61,7 +85,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push Docker image 🐳
+      - name: Push Docker image 🐳
         run: |
           docker buildx build --platform linux/amd64,linux/arm64 \
             -t ghcr.io/${{ github.repository }}:$VERSION \
