@@ -41,7 +41,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          VERSION=$(npx semantic-release --dry-run | grep -oP 'The next release version is \\K[0-9]+\\.[0-9]+\\.[0-9]+')
+          VERSION=$(npx semantic-release --dry-run | grep -oP 'The next release version is \\K[0-9]+\\.[0-9]+\\.[0-9]+' || true)
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
       - name: Log in to GHCR 🔑
