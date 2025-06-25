@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/yggdrion/firecast-test/compare/v1.2.2...v1.2.3) (2025-06-25)
+
+### Bug Fixes
+
+* package ([a528dc1](https://github.com/yggdrion/firecast-test/commit/a528dc12b9479357a6935c97c2397c671b91726b))
+* update text ([5d2f055](https://github.com/yggdrion/firecast-test/commit/5d2f0553059a79b8179d402abecb8c81fc1e4546))
+
 # 🚀 Release ${version} (${date})
 
 ### Bug Fixes
