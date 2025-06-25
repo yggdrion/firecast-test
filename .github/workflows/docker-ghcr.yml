@@ -48,7 +48,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          VERSION=$(npx semantic-release --dry-run | grep -oP 'The next release version is \\K[0-9]+\\.[0-9]+\\.[0-9]+' || true)
+          VERSION=$(npx semantic-release --dry-run | grep -oP 'Skip v\K[0-9]+\.[0-9]+\.[0-9]+' || true)
+          if [ -z "$VERSION" ]; then
+            exit 1
+          fi
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
 
       - name: Log in to GHCR 🔑
         uses: docker/login-action@v3
