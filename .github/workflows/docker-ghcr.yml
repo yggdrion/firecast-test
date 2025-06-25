@@ -38,6 +38,10 @@ jobs:
       - name: Configure semantic-release 📜
         run: |
           npx semantic-release --dry-run | grep -oP 'The next release version is \\K[0-9]+\\.[0-9]+\\.[0-9]+'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Get next version from semantic-release 🏷️
         id: get_version
         env:
