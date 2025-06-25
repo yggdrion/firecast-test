@@ -39,6 +39,12 @@ jobs:
         with:
           node-version: 20
 
+      - name: Get next version from semantic-release
+        id: get_version
+        run: |
+          VERSION=$(npx semantic-release --dry-run | grep -oP 'The next release version is \K[0-9]+\.[0-9]+\.[0-9]+')
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
       - name: Log in to GHCR 🔑
         uses: docker/login-action@v3
         with:
@@ -49,6 +55,7 @@ jobs:
       - name: Build and push Docker image 🐳
         run: |
           docker buildx build --platform linux/amd64 \
+            -t ghcr.io/${{ github.repository }}:${{ env.VERSION }} \
             -t ghcr.io/${{ github.repository }}:latest \
             --push \
             --cache-from=type=gha \
