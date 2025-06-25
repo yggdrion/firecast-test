@@ -7,7 +7,38 @@
             "@semantic-release/commit-analyzer"
         ],
         [
-            "@semantic-release/release-notes-generator"
+            "@semantic-release/release-notes-generator",
+            {
+                "preset": "conventionalcommits",
+                "writerOpts": {
+                    "headerPartial": "# 🚀 Release ${version} (${date})\n",
+                    "commitGroupsSort": "title",
+                    "groupBy": "type",
+                    "commitGroups": [
+                        {
+                            "title": "✨ Features"
+                        },
+                        {
+                            "title": "🐛 Bug Fixes"
+                        },
+                        {
+                            "title": "📝 Documentation"
+                        },
+                        {
+                            "title": "🔧 Chores"
+                        },
+                        {
+                            "title": "🚨 Tests"
+                        },
+                        {
+                            "title": "⚡ Performance"
+                        },
+                        {
+                            "title": "⬆️ Dependencies"
+                        }
+                    ]
+                }
+            }
         ],
         [
             "@semantic-release/changelog"
