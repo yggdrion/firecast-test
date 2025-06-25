@@ -42,7 +42,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           VERSION=$(npx semantic-release --dry-run | grep -oP 'The next release version is \\K[0-9]+\\.[0-9]+\\.[0-9]+' || true)
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
 
       - name: Log in to GHCR 🔑
         uses: docker/login-action@v3
@@ -53,12 +52,20 @@ jobs:
 
       - name: Build and push Docker image 🐳
         run: |
-          docker buildx build --platform linux/amd64 \
-            -t ghcr.io/${{ github.repository }}:${{ env.VERSION }} \
-            -t ghcr.io/${{ github.repository }}:latest \
-            --push \
-            --cache-from=type=gha \
-            --cache-to=type=gha,mode=max .
+          if [ -n "$VERSION" ]; then
+            docker buildx build --platform linux/amd64 \
+              -t ghcr.io/${{ github.repository }}:$VERSION \
+              -t ghcr.io/${{ github.repository }}:latest \
+              --push \
+              --cache-from=type=gha \
+              --cache-to=type=gha,mode=max .
+          else
+            docker buildx build --platform linux/amd64 \
+              -t ghcr.io/${{ github.repository }}:latest \
+              --push \
+              --cache-from=type=gha \
+              --cache-to=type=gha,mode=max .
+          fi
 
       - name: Run semantic-release 🚀
         env:
