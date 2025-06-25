@@ -1,3 +1,21 @@
+# 🚀 Release ${version} (${date})
+
+### Bug Fixes
+
+* 1231231 ([892f9a2](https://github.com/yggdrion/firecast-test/commit/892f9a2c4a1d2fd836fe33e26fa9720a5d60eed6))
+* awdawd ([d865a1e](https://github.com/yggdrion/firecast-test/commit/d865a1e1535a795c5e2b90dc9b671452c7f94fa6))
+* awdawdawdawd ([584c2e6](https://github.com/yggdrion/firecast-test/commit/584c2e6e240be5bc0e2acb2aac9c038d3d370637))
+* better way ([e232854](https://github.com/yggdrion/firecast-test/commit/e232854c05198a6594887d43cb54f1082a348a98))
+* emojis ([dc83211](https://github.com/yggdrion/firecast-test/commit/dc832119ce75d29ff9a17dab9eab5b2d3d91f2a8))
+* nice emojis ([5826f49](https://github.com/yggdrion/firecast-test/commit/5826f4925bf4c6ac50a2c0b3fc499bd9bdd6bdc9))
+* revert stuff ([7717a23](https://github.com/yggdrion/firecast-test/commit/7717a23db5f6fd74971b3aeeb62e0b1eaa78e368))
+* show output ([686a8c7](https://github.com/yggdrion/firecast-test/commit/686a8c79c3c7956f39bc8002c341f0b9c39995d9))
+* test ([2928c67](https://github.com/yggdrion/firecast-test/commit/2928c677830cdef60d3a6a292aaef732685bebe4))
+* test123 ([61e2054](https://github.com/yggdrion/firecast-test/commit/61e205422535118bbf8af7a2ee25a521b8767f5a))
+* test123 ([c1b92a3](https://github.com/yggdrion/firecast-test/commit/c1b92a398356abae75cce9fb9b7affdee40c12a5))
+* update package ([4a942dd](https://github.com/yggdrion/firecast-test/commit/4a942dd8e09daae93a4dc85cd37b61934b94af07))
+* version waqd awd ([090e6ac](https://github.com/yggdrion/firecast-test/commit/090e6acbf0e397155500988dc6c275d3648fa449))
+
 ## [1.2.1](https://github.com/yggdrion/firecast-test/compare/v1.2.0...v1.2.1) (2025-06-25)
 
 
