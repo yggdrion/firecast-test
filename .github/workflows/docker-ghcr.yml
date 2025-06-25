@@ -63,20 +63,12 @@ jobs:
 
       - name: Build and push Docker image 🐳
         run: |
-          if [ -n "$VERSION" ]; then
-            docker buildx build --platform linux/amd64 \
-              -t ghcr.io/${{ github.repository }}:$VERSION \
-              -t ghcr.io/${{ github.repository }}:latest \
-              --push \
-              --cache-from=type=gha \
-              --cache-to=type=gha,mode=max .
-          else
-            docker buildx build --platform linux/amd64 \
-              -t ghcr.io/${{ github.repository }}:latest \
-              --push \
-              --cache-from=type=gha \
-              --cache-to=type=gha,mode=max .
-          fi
+          docker buildx build --platform linux/amd64,linux/arm64 \
+            -t ghcr.io/${{ github.repository }}:$VERSION \
+            -t ghcr.io/${{ github.repository }}:latest \
+            --push \
+            --cache-from=type=gha \
+            --cache-to=type=gha,mode=max .
 
       - name: Run semantic-release 🚀
         env:
