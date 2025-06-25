@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/yggdrion/firecast-test/compare/v1.0.0...v1.1.0) (2025-06-25)
+
+
+### Features
+
+* tawdawd123123 ([901a105](https://github.com/yggdrion/firecast-test/commit/901a1053e53e744dcdb77d09bc3c273f5244e32b))
+
 # 1.0.0 (2025-06-25)
 
 
