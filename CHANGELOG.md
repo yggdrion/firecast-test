@@ -1,3 +1,9 @@
+## [1.4.0](https://github.com/yggdrion/firecast-test/compare/v1.3.0...v1.4.0) (2025-06-26)
+
+### Features
+
+* emoji test 1 ([08c7b55](https://github.com/yggdrion/firecast-test/commit/08c7b55375cb95e6a68afd272f30822d6f24259d))
+
 ## [1.3.0](https://github.com/yggdrion/firecast-test/compare/v1.2.4...v1.3.0) (2025-06-26)
 
 ### Bug Fixes
