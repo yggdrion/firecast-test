@@ -1,3 +1,13 @@
+# 🚀 Release
+
+
+
+## [1.5.0](https://github.com/yggdrion/firecast-test/compare/v1.4.0...v1.5.0) (2025-06-26)
+
+### Features
+
+* wipwip ([2a491ec](https://github.com/yggdrion/firecast-test/commit/2a491ec6ed98cf8c31e846a22c7918fc1bc5c27c))
+
 ## [1.4.0](https://github.com/yggdrion/firecast-test/compare/v1.3.0...v1.4.0) (2025-06-26)
 
 ### Features
