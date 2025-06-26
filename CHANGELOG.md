@@ -2,6 +2,12 @@
 
 
 
+# 🚀 Release
+
+### Features
+
+* fix header stuff ([dc8c3bf](https://github.com/yggdrion/firecast-test/commit/dc8c3bf1c84eb45e743e0f349865746ef11182ae))
+
 ## [1.5.0](https://github.com/yggdrion/firecast-test/compare/v1.4.0...v1.5.0) (2025-06-26)
 
 ### Features
