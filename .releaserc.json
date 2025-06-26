@@ -11,7 +11,7 @@
             {
                 "preset": "conventionalcommits",
                 "writerOpts": {
-                    "header": "# 🚀 Release",
+                    "headerPartial": "# 🚀 Release\n",
                     "commitGroupsSort": "title",
                     "groupBy": "type",
                     "commitGroups": [
