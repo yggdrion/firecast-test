@@ -1,3 +1,9 @@
+## [1.8.0](https://github.com/yggdrion/firecast-test/compare/v1.7.0...v1.8.0) (2025-06-26)
+
+### Features
+
+* clean ([5738c23](https://github.com/yggdrion/firecast-test/commit/5738c23c35949ef5ad3b821a6b43578f8a104ab0))
+
 # 🚀 Release
 
 ### Features
