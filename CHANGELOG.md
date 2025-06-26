@@ -1,5 +1,11 @@
 # 🚀 Release
 
+### Features
+
+* fix some stuff ([ae9ffb8](https://github.com/yggdrion/firecast-test/commit/ae9ffb857505b73c74c184efd50c33c6b26fb816))
+
+# 🚀 Release
+
 
 
 # 🚀 Release
