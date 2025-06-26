@@ -41,10 +41,7 @@
             }
         ],
         [
-            "@semantic-release/changelog",
-            {
-                "changelogTitle": "# 🚀 Release\n\n"
-            }
+            "@semantic-release/changelog"
         ],
         [
             "@semantic-release/github"
