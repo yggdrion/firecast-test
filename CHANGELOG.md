@@ -1,3 +1,21 @@
+## [1.3.0](https://github.com/yggdrion/firecast-test/compare/v1.2.4...v1.3.0) (2025-06-26)
+
+### Bug Fixes
+
+* dependabot requirements ([b62d3f2](https://github.com/yggdrion/firecast-test/commit/b62d3f22a26b150f2fb5635882671b208bd05ba7))
+* name ([5250784](https://github.com/yggdrion/firecast-test/commit/5250784960f59218caa31e4cabbda91a5e6079f4))
+* revert requirements ([b4ee7c1](https://github.com/yggdrion/firecast-test/commit/b4ee7c1b443193f57e2a6c485db805710efee379))
+* test req ([e0367bd](https://github.com/yggdrion/firecast-test/commit/e0367bda0e5d41d9652e2b0a0a122201b5ec2f52))
+* title ([e29b8c4](https://github.com/yggdrion/firecast-test/commit/e29b8c426ddc2dd9ab2f5aa5f56a4fcfeec99864))
+* use hashes ([02a1b70](https://github.com/yggdrion/firecast-test/commit/02a1b707c5e44cb93e3f0add55eaff5a8683a6d3))
+
+### Features
+
+* is this a release? ([dfa325d](https://github.com/yggdrion/firecast-test/commit/dfa325d501b57814f6ff21f3c5b756d9a42e867e))
+* new release flow 2 ([68a35f7](https://github.com/yggdrion/firecast-test/commit/68a35f78fbf6df9ff656e18f90187b67b2cd9998))
+* requirements to pyproject ([85ea2e3](https://github.com/yggdrion/firecast-test/commit/85ea2e383185e251ea7eeee877fdd1713df8b74b))
+* test new release logic ([f80c708](https://github.com/yggdrion/firecast-test/commit/f80c708bdad76846898f656ee57dbffc65210faf))
+
 ## [1.2.4](https://github.com/yggdrion/firecast-test/compare/v1.2.3...v1.2.4) (2025-06-25)
 
 ### Bug Fixes
